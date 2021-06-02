@@ -6,11 +6,6 @@ const upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const special = ["\u0021", "\u0023", "\u0024", "\u0025", "\u0026", "\u002B", "\u002D", "\u003C", "\u003D", "\u003E", "\u003F", "\u0040", "\u005E", "\u005F", "\u007E"];
 
-function swap(x, y) {
-  let temp = x;
-  x = y;
-  y = temp;
-}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -61,15 +56,19 @@ function writePassword() {
       }
     }
 
-
-    //for (l = 0; l < (Math.floor(Math.random() * (pass.length - 1))); l++) {
-      // let m = (Math.floor(Math.random() * (pass.length - 1)))
-      // swap(pass[l], pass[m]);
-      // debugger;
+    // function swap(array) {
+    //   [array[0], array[(Math.floor(Math.random() * (pass.length - 1)))]] = [array[(Math.floor(Math.random() * (pass.length - 1)))], array[0]];
     // }
+
+    // for (l = 0; l < 10; l++) {
+    //   pass = swap(pass);
+    // }
+    
     // adds additional random characters to password if needed per user specifications 
     if (passLength != pass.length) {
-      for (i = 0; i < (passLength - pass.length); i++) {
+      let remain = passLength - pass.length;
+      console.log(remain);
+      for (i = 0; i < remain; i++) {
         let chars = characters[(Math.floor(Math.random() * (characters.length - 1)))]
         pass.push(chars[(Math.floor(Math.random() * (chars.length - 1)))]);
       }
