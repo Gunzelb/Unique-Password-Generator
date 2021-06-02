@@ -69,7 +69,9 @@ function writePassword() {
       let remain = passLength - pass.length;
       console.log(remain);
       for (i = 0; i < remain; i++) {
-        let chars = characters[(Math.floor(Math.random() * (characters.length - 1)))]
+        let index = (Math.floor(Math.random() * (characters.length)));
+        let chars = characters[index];
+        console.log(index);
         pass.push(chars[(Math.floor(Math.random() * (chars.length - 1)))]);
       }
     }
